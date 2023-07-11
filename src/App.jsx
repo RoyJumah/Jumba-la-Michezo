@@ -14,7 +14,7 @@ import PlayedSummary from "./components/PlayedSummary";
 
 const KEY = "9f8f8f52e7fd4e629f25af8440bcd243";
 const App = () => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState("nba");
   const [isLoading, setIsloading] = useState(false);
   const [games, setGames] = useState([]);
   const [error, setError] = useState("");
@@ -36,7 +36,7 @@ const App = () => {
   }
 
   function handleDeletePlayed(id) {
-    setPlayed((played) => played.filter((games) => games.name !== id));
+    setPlayed((played) => played.filter((games) => games.id !== id));
   }
 
   useEffect(() => {

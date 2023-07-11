@@ -5,11 +5,7 @@ const PlayedGameList = ({ played, onDeletePlayed }) => {
   return (
     <ul className="list-none py-3 px-0">
       {played?.map((game) => (
-        <PlayedGame
-          game={game}
-          key={game.name}
-          onDeletePlayed={onDeletePlayed}
-        />
+        <PlayedGame game={game} key={game.id} onDeletePlayed={onDeletePlayed} />
       ))}
     </ul>
   );

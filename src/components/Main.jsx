@@ -1,6 +1,6 @@
 const Main = ({ children }) => {
   return (
-    <main className="mt-2 h-calc-screen flex gap-2 justify-center">
+    <main className="mt-2 h-calc-screen flex gap-9 justify-center">
       {children}
     </main>
   );

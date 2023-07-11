@@ -9,9 +9,9 @@ const PlayedSummary = ({ played }) => {
   const avgPlaytime = average(played?.map((played) => played.playtime));
 
   return (
-    <div className="rounded-xl bg-secondary-light pt-9 pr-12 pb-7 pl-12 shadow">
-      <h2 className="uppercase text-base mb-2">Games you played</h2>
-      <div className="flex items-center gap-9 text-xl font-semibold">
+    <div className="rounded-lg bg-secondary-light pt-5 pr-8 pb-5 pl-8 shadow-inner-primary">
+      <h2 className="uppercase text-base mb-2 font-games">Games you played</h2>
+      <div className="flex items-center gap-6 text-lg">
         <p className="flex items-center gap-3">
           <span>#️⃣</span>
           <span>{played.length} games</span>
@@ -25,8 +25,8 @@ const PlayedSummary = ({ played }) => {
           <span>{avgUserRating.toFixed(2)}</span>
         </p>
         <p className="flex items-center gap-3">
-          <span>⭐</span>
-          <span>{avgPlaytime}</span>
+          <span>⏳</span>
+          <span>{avgPlaytime} hrs</span>
         </p>
       </div>
     </div>
