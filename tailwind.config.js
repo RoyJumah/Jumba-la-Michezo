@@ -12,8 +12,8 @@ export default {
       },
 
       backgroundColor: {
-        primary: "#6741d9",
-        "primary-light": "#7950f2",
+        primary: "#fab005",
+        "primary-light": "#ffe066",
         "secondary-light": "#2b3035",
         "secondary-dark": " #212529",
         "tertiary-dark": "#212529",
@@ -35,12 +35,12 @@ export default {
       colors: {
         "secondary-light": "#2b3035",
         "secondary-dark": " #212529",
-        " primary": "#6741d9",
-        "primary-light": "#7950f2",
+        " primary": "#fab005",
+        "primary-light": "#ffe066",
         "tertiary-dark": "#212529",
       },
       textColor: {
-        dark: " #adb5bd",
+        dark: "#495057",
         "secondary-dark": " #212529",
       },
       zIndex: {

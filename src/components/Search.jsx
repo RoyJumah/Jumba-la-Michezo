@@ -5,7 +5,7 @@ const Search = ({ query, setQuery }) => {
     <div>
       <input
         value={query}
-        className="bg-primary-light placeholder:text-gray-300 text-gray-200 border-none  p-1 rounded-md outline-none"
+        className="bg-primary-light placeholder:text-gray-300  border-none  p-1 rounded-md outline-none text-dark"
         placeholder="Search Games..."
         onChange={(e) => setQuery(e.target.value)}
       ></input>

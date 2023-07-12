@@ -9,7 +9,7 @@ const PlayedSummary = ({ played }) => {
   const avgPlaytime = average(played?.map((played) => played.playtime));
 
   return (
-    <div className="rounded-lg bg-secondary-light pt-5 pr-8 pb-5 pl-8 shadow-inner-primary">
+    <div className="rounded-lg bg-secondary-light pt-5 pr-8 pb-5 pl-8 shadow-inner-primary text-white">
       <h2 className="uppercase text-base mb-2 font-games">Games you played</h2>
       <div className="flex items-center gap-6 text-lg">
         <p className="flex items-center gap-3">
