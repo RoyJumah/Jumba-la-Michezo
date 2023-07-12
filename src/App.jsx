@@ -11,19 +11,15 @@ import NumResults from "./components/NumResults";
 import GameDetails from "./components/GameDetails";
 import PlayedGameList from "./components/PlayedGameList";
 import PlayedSummary from "./components/PlayedSummary";
+import { useGames } from "./useGames";
+import { useLocalStorage } from "./useLocalStorage";
 
-const KEY = "9f8f8f52e7fd4e629f25af8440bcd243";
 const App = () => {
-  const [query, setQuery] = useState("nba");
-  const [isLoading, setIsloading] = useState(false);
-  const [games, setGames] = useState([]);
-  const [error, setError] = useState("");
+  const [query, setQuery] = useState("f1 23");
   const [selectedId, setSelectedId] = useState(null);
 
-  const [played, setPlayed] = useState(() => {
-    const storedValue = localStorage.getItem("played");
-    return JSON.parse(storedValue) || [];
-  });
+  const { games, isLoading, error } = useGames(query);
+  const [played, setPlayed] = useLocalStorage([], "played");
   function handleSelectedGame(id) {
     setSelectedId((selectedId) => (id === selectedId ? null : id));
   }
@@ -39,46 +35,6 @@ const App = () => {
     setPlayed((played) => played.filter((games) => games.id !== id));
   }
 
-  useEffect(() => {
-    localStorage.setItem("played", JSON.stringify(played));
-  }, [played]);
-
-  useEffect(() => {
-    const controller = new AbortController();
-    async function fetchGames() {
-      try {
-        setIsloading(true);
-        setError("");
-        const res = await fetch(
-          `https://api.rawg.io/api/games?key=${KEY}&search=${query}`,
-          { signal: controller.signal }
-        );
-        if (!res.ok) throw new Error("Cannot fetch games");
-        const data = await res.json();
-        if (data.Response === "False") throw new Error("Game not found");
-        setGames(data.results);
-        setError("");
-        console.log(data.results);
-      } catch (err) {
-        console.log(err.message);
-        if (err.name !== "AbortError") {
-          setError(err.message);
-        }
-      } finally {
-        setIsloading(false);
-      }
-    }
-    if (query.length < 3) {
-      setGames([]);
-      setError("");
-      return;
-    }
-
-    fetchGames();
-    return () => {
-      controller.abort();
-    };
-  }, [query]);
   return (
     <>
       <div className="text-dark bg-secondary-dark min-h-screen">

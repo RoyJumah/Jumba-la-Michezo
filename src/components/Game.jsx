@@ -4,7 +4,7 @@ const Game = ({ game, onSelectedGame }) => {
   return (
     <li
       onClick={() => onSelectedGame(game.id)}
-      className="relative flex items-center gap-x-2 cursor-pointer py-6 px-12 border border-b-secondary-light hover:bg-secondary-light"
+      className="relative flex items-center gap-x-2 cursor-pointer py-6 px-12 border-b border-secondary-light hover:bg-secondary-light"
     >
       <img
         className="w-16 h-16 object-cover"

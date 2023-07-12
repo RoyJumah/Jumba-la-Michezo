@@ -2,7 +2,7 @@ import PropType from "prop-types";
 
 const PlayedGame = ({ game, onDeletePlayed }) => {
   return (
-    <li className="flex items-center gap-x-4 border-b-secondary-light text-lg px-8 py-3 relative">
+    <li className="flex items-center gap-x-4 border-b border-secondary-light text-lg px-8 py-3 relative">
       <img
         className="w-16 h-16 object-cover "
         src={game.image}
