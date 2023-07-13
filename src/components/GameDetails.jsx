@@ -35,7 +35,7 @@ const GameDetails = ({ selectedId, onAddPlayed, onCloseGame, played }) => {
       released,
       image,
       rating: Number(rating),
-      playtime: Number(playtime.split(" ").at(0)),
+      playtime: Number(playtime),
       userRating,
     };
     onAddPlayed(newPlayedGame);
@@ -95,12 +95,12 @@ const GameDetails = ({ selectedId, onAddPlayed, onCloseGame, played }) => {
           <header className="flex">
             <button
               onClick={onCloseGame}
-              className="items-center flex aspect-1 bg-white rounded-full grow-0 shrink-0 justify-center absolute text-secondary-dark border-0 cursor-pointer font-bold font-sans z-999 top-1 h-8 text-2xl"
+              className="items-center flex aspect-1 bg-white rounded-full grow-0 shrink-0 justify-center absolute border-0 cursor-pointer font-bold font-sans z-999 top-1 h-8 text-2xl"
             >
               &larr;
             </button>
             <img className="w-33" src={image} alt={name} />
-            <div className="font-games flex flex-col gap-2 bg-secondary-light py-6 px-8 w-full">
+            <div className="font-games flex flex-col gap-2 bg-secondary-light py-6 px-8 w-full text-white">
               <h2 className="text-2xl mb-1">{name}</h2>
               <p className="font-inherit items-center gap-1 text-base font-normal ">
                 {released} &bull; {playtime}hrs
@@ -112,7 +112,7 @@ const GameDetails = ({ selectedId, onAddPlayed, onCloseGame, played }) => {
             </div>
           </header>
           <section className="gap-4 p-10 flex flex-col">
-            <div className="font-bold gap-7 mb-3 flex rounded-xl flex-col bg-secondary-light py-8 px-9">
+            <div className="font-bold gap-7 mb-3 flex rounded-xl flex-col bg-secondary-light py-8 px-9 ">
               {!isPlayed ? (
                 <>
                   <StarRating
@@ -122,7 +122,7 @@ const GameDetails = ({ selectedId, onAddPlayed, onCloseGame, played }) => {
                   />
                   {userRating > 0 && (
                     <button
-                      className="bg-primary border-0 text-dark cursor-pointer text-base font-bold rounded-xl p-3 transition-all duration-300"
+                      className="bg-primary border-0 text-white cursor-pointer text-base font-bold rounded-xl p-3 transition-all duration-300"
                       onClick={handleAdd}
                     >
                       + Add to List
@@ -130,13 +130,13 @@ const GameDetails = ({ selectedId, onAddPlayed, onCloseGame, played }) => {
                   )}
                 </>
               ) : (
-                <p>
+                <p className="text-white">
                   You rated this game {watchedUserRating}
                   <span>⭐</span>
                 </p>
               )}
             </div>
-            <p className="text-base font-normal">
+            <p className="text-base font-normal text-white">
               <em>{details?.split(" ").slice(0, 30).join(" ")}...</em>
             </p>
             {/* <p>Game created by {developerName}</p> */}

@@ -12,8 +12,8 @@ export default {
       },
 
       backgroundColor: {
-        primary: "#fab005",
-        "primary-light": "#ffe066",
+        primary: "#e67700",
+        "primary-light": "#f59f00",
         "secondary-light": "#2b3035",
         "secondary-dark": " #212529",
         "tertiary-dark": "#212529",
@@ -35,8 +35,8 @@ export default {
       colors: {
         "secondary-light": "#2b3035",
         "secondary-dark": " #212529",
-        " primary": "#fab005",
-        "primary-light": "#ffe066",
+        primary: "#e67700",
+        "primary-light": "#f59f00",
         "tertiary-dark": "#212529",
       },
       textColor: {

@@ -1,6 +1,6 @@
 import GamesList from "./components/GamesList";
 import NavBar from "./components/NavBar";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Loader from "./components/Loader";
 import ErrorMessage from "./components/ErrorMessage";
 import Container from "./components/Container";
@@ -15,7 +15,7 @@ import { useGames } from "./useGames";
 import { useLocalStorage } from "./useLocalStorage";
 
 const App = () => {
-  const [query, setQuery] = useState("f1 23");
+  const [query, setQuery] = useState("");
   const [selectedId, setSelectedId] = useState(null);
 
   const { games, isLoading, error } = useGames(query);
