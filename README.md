@@ -33,9 +33,6 @@ This is an application that allows users to search through a wide range of video
 ## Preview
 <table style="border-collapse: collapse; border: 0;">
   <tr>
-    <td><img src="https://github.com/RoyJumah/Jumba-la-Michezo/assets/61903079/5b88bc8b-b099-45d3-b083-1ae65a7360a1"></td>
-  </tr>
-  <tr>
     <td><img src="https://github.com/RoyJumah/Jumba-la-Michezo/assets/61903079/deaea174-ed04-4cfc-ac49-00b80a9d4f5e"></td>
   </tr>
   </table>
